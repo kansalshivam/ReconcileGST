@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base Viewport & Background Layers (True Onyx & Dark Zinc Architecture) */
+    --color-bg-base: #090A0C;           /* Deep Onyx - Zero Blue/Slate */
+    --color-bg-surface-1: #121418;      /* Container cards & grid backdrops */
+    --color-bg-surface-2: #1A1D23;      /* Elevated cards, headers, hover rows */
+    --color-bg-surface-3: #262A32;      /* Active selections, dropdown menus */
+    --color-bg-glass: rgba(18, 20, 24, 0.90); /* Glassmorphic header & sticky HUD */
+    --color-bg-overlay: rgba(9, 10, 12, 0.88); /* Modal & backdrop scrim */
+
+    /* Hairline Border & Outline Tokens */
+    --color-border-subtle: rgba(45, 49, 58, 0.70); /* Subtle grid hairlines */
+    --color-border-default: #2A2E37;                /* Card boundaries */
+    --color-border-strong: #3D4350;                 /* Hover borders & inputs */
+    --color-border-glow: #D97706;                   /* Warm Ochre Focus Ring */
+
+    /* Brand & Accent: Warm Antique Ochre / Gold */
+    --color-brand-base: #D97706;
+    --color-brand-surface: rgba(217, 119, 6, 0.14);
+    --color-brand-border: rgba(217, 119, 6, 0.40);
+    --color-brand-glow: rgba(217, 119, 6, 0.55);
+    --color-brand-text: #F59E0B;
+
+    /* High-Contrast Semantic Palette */
+    --color-emerald-base: #10B981;
+    --color-emerald-surface: rgba(16, 185, 129, 0.12);
+    --color-emerald-border: rgba(16, 185, 129, 0.35);
+    --color-emerald-glow: rgba(16, 185, 129, 0.50);
+    --color-emerald-text: #34D399;
+
+    --color-crimson-base: #EF4444;
+    --color-crimson-surface: rgba(239, 68, 68, 0.14);
+    --color-crimson-border: rgba(239, 68, 68, 0.40);
+    --color-crimson-glow: rgba(239, 68, 68, 0.60);
+    --color-crimson-text: #F87171;
+
+    --color-amber-base: #F59E0B;
+    --color-amber-surface: rgba(245, 158, 11, 0.12);
+    --color-amber-border: rgba(245, 158, 11, 0.35);
+    --color-amber-glow: rgba(245, 158, 11, 0.50);
+    --color-amber-text: #FBBF24;
+
+    --color-violet-base: #8B5CF6;
+    --color-violet-surface: rgba(139, 92, 246, 0.12);
+    --color-violet-border: rgba(139, 92, 246, 0.35);
+    --color-violet-text: #A78BFA;
+
+    /* Shadows */
+    --shadow-terminal-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-border-default);
+    --shadow-drawer: -8px 0 32px 0 rgba(0, 0, 0, 0.7);
+    --shadow-glow-emerald: 0 0 16px rgba(16, 185, 129, 0.35);
+    --shadow-glow-crimson: 0 0 16px rgba(239, 68, 68, 0.35);
+    --shadow-glow-brand: 0 0 16px rgba(217, 119, 6, 0.35);
+
+    /* Radii */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+  }
+
+  body {
+    background-color: var(--color-bg-base);
+    color: #F3F4F6;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbar for High-Density Financial Grids */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
+}
