@@ -1,0 +1,209 @@
+{
+  "gstin": "07AAAAA0000A1Z5",
+  "fp": "082026",
+  "data": {
+    "b2b": [
+      {
+        "ctin": "07AAACL0303P1ZH",
+        "trdnm": "LARSEN & TOUBRO HEAVY ENGG LTD",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "LT/26-27/00456",
+            "idt": "05-08-2026",
+            "val": 118000.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 100000.00,
+                "rt": 18.0,
+                "igst": 0.0,
+                "cgst": 9000.0,
+                "sgst": 9000.0,
+                "cess": 0.0
+              }
+            ]
+          },
+          {
+            "inum": "00457",
+            "idt": "07-08-2026",
+            "val": 59000.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 50000.00,
+                "rt": 18.0,
+                "igst": 0.0,
+                "cgst": 4500.0,
+                "sgst": 4500.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ctin": "27AAACT2727Q1ZW",
+        "trdnm": "TATA STEEL PROCESSING & DIST LTD",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "TATA/ST/1299",
+            "idt": "08-08-2026",
+            "val": 295000.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 250000.00,
+                "rt": 18.0,
+                "igst": 45000.0,
+                "cgst": 0.0,
+                "sgst": 0.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ctin": "24AAACU8989M1ZU",
+        "trdnm": "ULTRATECH CEMENT MANUFACTURING LTD",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "UTCL/MUM/8902",
+            "idt": "10-08-2026",
+            "val": 84000.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 70000.00,
+                "rt": 20.0,
+                "igst": 14000.0,
+                "cgst": 0.0,
+                "sgst": 0.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ctin": "06AAACB4491J1ZT",
+        "trdnm": "BHARAT HEAVY ELECTRICALS LTD (BHEL)",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "BHEL-HYD/2026/094",
+            "idt": "12-08-2026",
+            "val": 212400.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 180000.00,
+                "rt": 18.0,
+                "igst": 32400.0,
+                "cgst": 0.0,
+                "sgst": 0.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ctin": "07AAACS7731P1ZX",
+        "trdnm": "SIEMENS ENERGY POWER SOLUTIONS LTD",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "SIEMENS/DEL/8831",
+            "idt": "14-08-2026",
+            "val": 141600.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 120000.00,
+                "rt": 18.0,
+                "igst": 0.0,
+                "cgst": 10800.0,
+                "sgst": 10800.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ctin": "27AAACK5512K1ZV",
+        "trdnm": "KIRLOSKAR BROTHERS PUMP WORKS LTD",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "KB/26/5541",
+            "idt": "16-08-2026",
+            "val": 94400.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 80000.00,
+                "rt": 18.0,
+                "igst": 14400.0,
+                "cgst": 0.0,
+                "sgst": 0.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ctin": "27AAZCS4613R1ZW",
+        "trdnm": "SUPREME INDUSTRIES LTD",
+        "supp_typ": "Regular",
+        "inv": [
+          {
+            "inum": "INV/26-27/0451",
+            "idt": "15-08-2026",
+            "val": 11800.00,
+            "inv_typ": "R",
+            "pos": "07",
+            "itms": [
+              {
+                "num": 1,
+                "txval": 10000.00,
+                "rt": 18.0,
+                "igst": 1800.0,
+                "cgst": 0.0,
+                "sgst": 0.0,
+                "cess": 0.0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cdnr": [],
+    "itcavl": {
+      "itc_avl": 145900.00,
+      "igst_avl": 107600.00,
+      "cgst_avl": 24300.00,
+      "sgst_avl": 24300.00,
+      "cess_avl": 0.00
+    }
+  }
+}
