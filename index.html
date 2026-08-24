@@ -266,8 +266,56 @@
       </div>
     </div>
 
+    <!-- DUAL INGESTION DROPZONE SECTION -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3.5">
+      <!-- Slot 1: ERP Purchase Register -->
+      <div id="dropErp" ondragover="event.preventDefault(); this.classList.add('border-ochre');" ondragleave="this.classList.remove('border-ochre');" ondrop="handleErpDrop(event)" class="bg-onyx-carbon border-2 border-dashed border-onyx-border hover:border-ochre-border rounded-xl p-4 flex items-center justify-between gap-4 transition-all">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-ochre-bg border border-ochre-border flex items-center justify-center shrink-0">
+            <i data-lucide="file-spreadsheet" class="w-5 h-5 text-ochre-text"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white flex items-center gap-2">
+              <span>1. ERP Purchase Register</span>
+              <span id="erpBadge" class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-onyx-void border border-onyx-border text-slate-400 font-bold">CSV / XLSX</span>
+            </div>
+            <p id="erpLabel" class="text-[11px] text-onyx-textSubtle mt-0.5">Drag & drop Tally, Zoho, SAP export here</p>
+          </div>
+        </div>
+        <div>
+          <input type="file" id="erpFileInput" accept=".csv,.xlsx,.xls,.tsv" onchange="handleErpFileSelect(event)" class="hidden" />
+          <button onclick="document.getElementById('erpFileInput').click()" class="px-3.5 py-1.5 bg-onyx-graphite hover:bg-onyx-cardHover border border-onyx-borderLight text-slate-200 hover:text-white text-xs font-semibold rounded-lg shadow-sm transition-all">
+            Browse File
+          </button>
+        </div>
+      </div>
+
+      <!-- Slot 2: Government GSTR-2B -->
+      <div id="dropG2b" ondragover="event.preventDefault(); this.classList.add('border-emerald');" ondragleave="this.classList.remove('border-emerald');" ondrop="handleG2bDrop(event)" class="bg-onyx-carbon border-2 border-dashed border-onyx-border hover:border-emerald-border rounded-xl p-4 flex items-center justify-between gap-4 transition-all">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-bg border border-emerald-border flex items-center justify-center shrink-0">
+            <i data-lucide="file-json" class="w-5 h-5 text-emerald-text"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white flex items-center gap-2">
+              <span>2. Government GSTR-2B</span>
+              <span id="g2bBadge" class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-onyx-void border border-onyx-border text-slate-400 font-bold">JSON / XLSX</span>
+            </div>
+            <p id="g2bLabel" class="text-[11px] text-onyx-textSubtle mt-0.5">Drag & drop official GSTN portal download</p>
+          </div>
+        </div>
+        <div>
+          <input type="file" id="g2bFileInput" accept=".json,.xlsx,.xls" onchange="handleG2bFileSelect(event)" class="hidden" />
+          <button onclick="document.getElementById('g2bFileInput').click()" class="px-3.5 py-1.5 bg-onyx-graphite hover:bg-onyx-cardHover border border-onyx-borderLight text-slate-200 hover:text-white text-xs font-semibold rounded-lg shadow-sm transition-all">
+            Browse File
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- DATA TABLE CONTAINER -->
     <div class="flex-1 flex flex-col bg-onyx-carbon border border-onyx-border rounded-xl shadow-lg overflow-hidden min-h-[450px]">
+
       <!-- Filter & Search Toolbar -->
       <div class="px-4 py-3 border-b border-onyx-border bg-onyx-graphite flex flex-wrap items-center justify-between gap-3">
         <!-- Filter Tabs -->
@@ -502,6 +550,51 @@
     function formatINR(amount) {
       return '₹' + amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
+
+    function handleErpFileSelect(e) {
+      if (e.target.files && e.target.files[0]) {
+        const file = e.target.files[0];
+        document.getElementById('erpLabel').innerText = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+        document.getElementById('erpBadge').className = 'text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-bg border border-emerald-border text-emerald-text font-bold';
+        document.getElementById('erpBadge').innerText = 'LOADED';
+        runReconciliation(true);
+      }
+    }
+
+    function handleG2bFileSelect(e) {
+      if (e.target.files && e.target.files[0]) {
+        const file = e.target.files[0];
+        document.getElementById('g2bLabel').innerText = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+        document.getElementById('g2bBadge').className = 'text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-bg border border-emerald-border text-emerald-text font-bold';
+        document.getElementById('g2bBadge').innerText = 'LOADED';
+        runReconciliation(true);
+      }
+    }
+
+    function handleErpDrop(e) {
+      e.preventDefault();
+      document.getElementById('dropErp').classList.remove('border-ochre');
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        const file = e.dataTransfer.files[0];
+        document.getElementById('erpLabel').innerText = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+        document.getElementById('erpBadge').className = 'text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-bg border border-emerald-border text-emerald-text font-bold';
+        document.getElementById('erpBadge').innerText = 'LOADED';
+        runReconciliation(true);
+      }
+    }
+
+    function handleG2bDrop(e) {
+      e.preventDefault();
+      document.getElementById('dropG2b').classList.remove('border-emerald');
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        const file = e.dataTransfer.files[0];
+        document.getElementById('g2bLabel').innerText = file.name + ' (' + (file.size / 1024).toFixed(1) + ' KB)';
+        document.getElementById('g2bBadge').className = 'text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-bg border border-emerald-border text-emerald-text font-bold';
+        document.getElementById('g2bBadge').innerText = 'LOADED';
+        runReconciliation(true);
+      }
+    }
+
 
     function runReconciliation(notify = true) {
       const tStart = performance.now();
